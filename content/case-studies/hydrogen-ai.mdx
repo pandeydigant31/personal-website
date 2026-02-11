@@ -1,0 +1,39 @@
+---
+title: "Building an AI Operations Platform for Hydrogen Infrastructure"
+role: "AI Product Manager"
+company: "Clear Skies Hydrogen"
+date: "2024-2025"
+takeaway: "The hardest part of building AI for new infrastructure is that the data you need does not exist yet."
+summary: "Multi-agent AI system for autonomous monitoring and operations at hydrogen refueling infrastructure. Built the AI operations assistant, Grafana dashboards, and CFD simulation integrations."
+order: 1
+---
+
+> The hardest part of building AI for new infrastructure is that the data you need does not exist yet.
+
+## Context
+
+Hydrogen fueling infrastructure in the United States is nascent. There are fewer than 100 public hydrogen stations in the country, and each one operates with equipment that has limited operational history. Clear Skies Hydrogen is building refueling infrastructure for heavy-duty vehicles, and the operational challenge is straightforward: how do you run a network of hydrogen stations reliably when the playbook does not exist yet?
+
+The answer, or at least our bet, is AI-assisted operations. But building AI for infrastructure that barely exists creates a fundamental product problem: you cannot train models on data you do not have.
+
+## What I Did
+
+I own the AI product strategy and built the first version of our operations intelligence platform. This includes a multi-agent AI system that monitors station telemetry, a natural language operations assistant for field technicians, Grafana dashboards for real-time station health, and integrations with computational fluid dynamics (CFD) simulations for safety analysis.
+
+## Approach
+
+Three decisions defined the product:
+
+**Synthetic data as a product strategy.** Since we had limited real operational data, I built the product pipeline around CFD simulation outputs and physics-based models. Instead of waiting for enough failures to train on, we generated synthetic operational scenarios and used them to bootstrap our monitoring system. This turned a data limitation into a product feature: we could simulate failure modes before they happened.
+
+**Multi-agent architecture for operational complexity.** A single model cannot handle the range of decisions in station operations. I designed a system where specialized agents handle different operational domains (pressure monitoring, demand forecasting, maintenance scheduling) and a coordination layer synthesizes their outputs. Each agent can be evaluated and improved independently.
+
+**Technician-first interface design.** The end users are field technicians, not data scientists. I built the AI assistant to communicate in operational language, not model outputs. When the system detects an anomaly, it explains what it found, why it matters, and what to do about it. Trust is the product requirement.
+
+## Result
+
+The platform is now in deployment across CSH2's initial station network. Mean time to anomaly detection decreased significantly compared to manual monitoring. The natural language assistant handles routine operational queries, reducing the cognitive load on technicians managing multiple stations. CFD simulation integration allows safety analysis for new station configurations before physical deployment.
+
+## What I Took Away
+
+Building AI for genuinely new infrastructure forced me to rethink every assumption from my previous roles. There is no historical dataset to lean on. The evaluation framework becomes the product strategy because you are defining what "good" looks like at the same time you are building the system. This is the most honest form of product work: you cannot hide behind metrics when the infrastructure you serve is still being invented.

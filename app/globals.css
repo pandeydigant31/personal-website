@@ -1,26 +1,75 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg-primary: #0f0f0f;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-tertiary: #242424;
+  --color-bg-elevated: #2e2e2e;
+
+  --color-accent-amber: #c8804a;
+  --color-accent-amber-light: #d4975f;
+  --color-accent-amber-dim: #a06838;
+  --color-accent-gold: #b89a5a;
+  --color-accent-teal: #4a8c7f;
+  --color-accent-teal-light: #5da399;
+
+  --color-text-primary: #e8e2d9;
+  --color-text-secondary: #a39e95;
+  --color-text-tertiary: #6b6660;
+  --color-text-inverse: #0f0f0f;
+
+  --color-border-subtle: #2a2725;
+  --color-border-default: #3d3833;
+  --color-border-emphasis: #524d46;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, 'Times New Roman', serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-amber);
+    color: var(--color-text-inverse);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .prose-custom {
+    --tw-prose-body: var(--color-text-primary);
+    --tw-prose-headings: var(--color-text-primary);
+    --tw-prose-links: var(--color-accent-teal);
+    --tw-prose-bold: var(--color-text-primary);
+    --tw-prose-quotes: var(--color-text-secondary);
+    --tw-prose-quote-borders: var(--color-accent-amber);
+    --tw-prose-counters: var(--color-text-secondary);
+    --tw-prose-bullets: var(--color-accent-amber-dim);
+    --tw-prose-hr: var(--color-border-subtle);
+    --tw-prose-code: var(--color-accent-amber);
+    --tw-prose-pre-bg: var(--color-bg-secondary);
+  }
 }

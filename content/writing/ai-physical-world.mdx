@@ -1,0 +1,24 @@
+---
+title: "Why Physical-World AI is a Different Game"
+date: "2024-11-20"
+summary: "The product management playbook for AI changes completely when your deployment environment has physics, safety constraints, and humans in the loop."
+tags: ["ai", "product-thinking"]
+---
+
+Most AI product discourse assumes a digital deployment environment. The model serves predictions, users interact through screens, and errors are measured in engagement metrics. The worst case scenario is usually a bad recommendation or a weird chatbot response.
+
+Physical-world AI operates under different rules entirely.
+
+When your AI system controls a robotic arm, monitors a hydrogen refueling station, or informs a weather forecast that determines flight routes, the failure modes are not abstract. They are physical. Someone does not get their package. A station overpressurizes. A flight route takes pilots through weather they should have avoided.
+
+This changes three fundamental aspects of how you build AI products.
+
+**Evaluation is the product.** In digital AI, you can A/B test your way to good outcomes. In physical AI, you often cannot run controlled experiments because the cost of the "B" variant being wrong is unacceptable. Your evaluation framework, the way you validate that the system is safe to deploy and reliable in operation, becomes the core product artifact. I have spent more time designing evaluation pipelines than designing user interfaces in every physical-world AI role I have held.
+
+**Human trust is a system requirement, not a feature.** Digital products can function even when users are skeptical. Physical AI products cannot. An operator who does not trust the system will override it, ignore it, or work around it. Trust is not earned through accuracy metrics presented on a dashboard. It is earned through consistent, explainable behavior over time. Product design for trust is fundamentally different from product design for engagement.
+
+**Latency and reliability outrank capability.** A model that is 98% accurate but takes 5 seconds to respond is less useful than a simpler model that responds in 200 milliseconds when your deployment environment is a moving robotic arm. Physical-world constraints force you to make tradeoffs that pure-software AI teams rarely face. The right answer delivered too late is the wrong answer.
+
+None of this means physical-world AI is harder in some cosmic sense. It means the product discipline is different. If you bring a SaaS product management playbook to a robotics company, you will build the wrong things. The instincts that make you good at optimizing conversion funnels will actively mislead you when the product requirements include "do not injure anyone."
+
+The opportunity, though, is enormous. Most AI product talent is concentrated in digital applications. Physical-world industries, energy, logistics, manufacturing, agriculture, infrastructure, are desperate for product thinkers who understand both the technology and the constraints. If you are drawn to hard problems with real consequences, this is where the interesting work is.

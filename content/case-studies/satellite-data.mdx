@@ -1,0 +1,37 @@
+---
+title: "Satellite Data Products for Weather and Climate Applications"
+role: "Product Manager"
+company: "PlanetIQ"
+date: "2021-2022"
+takeaway: "When your raw data is radio signals refracted through the atmosphere from low-earth orbit, the product challenge is making the invisible tangible."
+summary: "Built data pipeline and product infrastructure for satellite-derived atmospheric data, processing billions of observations for weather forecasting and climate applications."
+order: 4
+---
+
+> When your raw data is radio signals refracted through the atmosphere from low-earth orbit, the product challenge is making the invisible tangible.
+
+## Context
+
+PlanetIQ operates a constellation of small satellites that measure the Earth's atmosphere using GPS radio occultation. When a GPS signal passes through the atmosphere on its way to a low-earth orbit satellite, it bends. By measuring that bending precisely, you can derive temperature, pressure, and moisture profiles of the atmosphere. These measurements are used by weather forecasting agencies, climate researchers, and commercial weather companies worldwide.
+
+The raw physics is elegant. The product challenge is less elegant: how do you turn billions of radio measurements into data products that weather forecasters actually trust and integrate into their systems?
+
+## What I Did
+
+I managed the data product pipeline from raw satellite observations to customer-ready atmospheric profiles. My scope included data quality standards, product packaging and delivery, API design for commercial customers, and customer integration support for government weather agencies.
+
+## Approach
+
+**Validation framework as competitive advantage.** In scientific data markets, trust is everything. I built a validation framework that compared our atmospheric profiles against radiosonde measurements (weather balloons), other satellite data, and numerical weather prediction model outputs. This was not just quality control. It was the product's primary sales tool. When a national weather agency evaluates a new data source, they want to see validation statistics, not feature lists.
+
+**Latency as a product dimension.** Weather data that arrives too late is worthless. I restructured the processing pipeline to reduce data latency from satellite observation to customer delivery. In weather forecasting, the difference between a 90-minute and 45-minute data delivery window can determine whether an observation gets assimilated into a forecast cycle or missed entirely. Latency was not a technical optimization. It was a product requirement with direct revenue implications.
+
+**Tiered product architecture for different customer segments.** Government weather agencies need raw profiles in specific formats (BUFR, NetCDF) delivered to specific endpoints with specific metadata conventions. Commercial weather companies want cleaned, gap-filled products via API. Climate researchers want long-term consistent datasets. I designed a product architecture that served all three from a common processing pipeline with segment-specific delivery layers.
+
+## Result
+
+The data products were adopted by multiple national weather agencies and integrated into operational weather forecasting systems. Data latency decreased substantially, enabling inclusion in more forecast cycles. The tiered product architecture supported commercial customer onboarding without custom engineering for each new account.
+
+## What I Took Away
+
+Satellite data taught me that in B2B data products, the product is not the data itself. The product is the trust framework around the data. Validation, consistency, latency guarantees, and format compliance are what customers actually buy. The atmospheric measurements are the commodity. Everything around them is the product.

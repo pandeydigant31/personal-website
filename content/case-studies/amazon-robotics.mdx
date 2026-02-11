@@ -1,0 +1,37 @@
+---
+title: "Computer Vision for Robotic Fulfillment at Scale"
+role: "Product Manager"
+company: "Amazon"
+date: "2022-2023"
+takeaway: "At 60,000 packages per day, 95% accuracy means 3,000 failures. The product question is always about trust, not precision."
+summary: "Computer vision and ML system deployed at Amazon's 60,000-package/day facility. Designed for reliability in a physical environment where model errors have real-world consequences."
+order: 2
+---
+
+> At 60,000 packages per day, 95% accuracy means 3,000 failures. The product question is always about trust, not precision.
+
+## Context
+
+Amazon's fulfillment centers process tens of thousands of packages every day through a combination of human workers and robotic systems. The interface between the two is where most product problems live. Computer vision systems need to identify, classify, and route packages in real time while operating alongside humans. A misclassified package creates a cascade: wrong bin, wrong truck, wrong delivery, and a customer who does not get their order.
+
+The scale makes everything harder. Problems that are invisible at 100 packages per day become systemic at 60,000.
+
+## What I Did
+
+I managed the computer vision product for a key workflow in the fulfillment pipeline. My scope included the ML model strategy, the human-in-the-loop fallback design, and the operational metrics framework that determined when the system could be trusted to operate with reduced human oversight.
+
+## Approach
+
+**Failure mode design before feature design.** I started by cataloging every way the system could fail and the downstream cost of each failure type. A false positive (flagging a normal package) costs seconds. A false negative (missing a damaged package) costs a return, a refund, and customer trust. This analysis determined the model's operating threshold, not accuracy alone.
+
+**Graduated autonomy model.** Instead of a binary "human vs. machine" decision, I designed a confidence-tiered system. High-confidence predictions are automated. Medium-confidence predictions are queued for rapid human review. Low-confidence items are fully manual. This approach let us capture the value of automation at the top end while maintaining quality at the margins.
+
+**Operational trust metrics.** Standard ML metrics (precision, recall, F1) do not capture what operations managers actually care about. I built a dashboard that translated model performance into operational language: packages per hour, error-induced rework time, and operator override rate. When an operations manager can see that overrides dropped from 15% to 4%, they trust the system. A 2% improvement in F1 score means nothing to them.
+
+## Result
+
+The graduated autonomy model increased throughput in the target workflow while reducing error-induced rework. Operator override rates decreased substantially over the deployment period, indicating growing trust in the system. The operational metrics framework became a template for other ML-powered workflows in the facility.
+
+## What I Took Away
+
+Working at Amazon scale taught me that model performance and product performance are different things. A model can be technically excellent and still fail as a product if the humans operating alongside it do not trust it. The product manager's job in physical AI is not to optimize the model. It is to design the system around the model so that trust compounds over time.
