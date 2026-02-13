@@ -22,7 +22,7 @@ const principles = [
 
 export function PhilosophySection() {
   return (
-    <section className="mx-auto max-w-[42rem] px-6 py-32">
+    <section className="mx-auto max-w-[56rem] px-6 py-32">
       <ScrollAnimation>
         <h2 className="font-serif text-2xl tracking-tight text-[var(--color-text-primary)]">
           How I Think
@@ -32,16 +32,26 @@ export function PhilosophySection() {
       <div className="mt-16 space-y-20">
         {principles.map((p, i) => (
           <ScrollAnimation key={p.number} delay={i * 0.1}>
-            <div>
-              <span className="text-xs font-medium tracking-widest uppercase text-[var(--color-accent-amber-dim)]">
-                {p.number}
-              </span>
-              <h3 className="mt-2 font-serif text-xl text-[var(--color-text-primary)]">
-                {p.title}
-              </h3>
-              <p className="mt-3 max-w-[32rem] leading-relaxed text-[var(--color-text-secondary)]">
-                {p.body}
-              </p>
+            <div className="grid gap-6 md:grid-cols-[8rem_1fr] md:gap-10">
+              {/* Left column: oversized number */}
+              <div className="flex items-start md:justify-end">
+                <span
+                  className="font-serif text-6xl font-light leading-none tracking-normal"
+                  style={{ color: 'rgba(200, 128, 74, 0.08)' }}
+                >
+                  {p.number}
+                </span>
+              </div>
+
+              {/* Right column: title + body */}
+              <div>
+                <h3 className="font-serif text-xl tracking-normal text-[var(--color-text-primary)]">
+                  {p.title}
+                </h3>
+                <p className="mt-3 max-w-[36rem] leading-relaxed text-[var(--color-text-secondary)]">
+                  {p.body}
+                </p>
+              </div>
             </div>
           </ScrollAnimation>
         ))}

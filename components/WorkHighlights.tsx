@@ -10,6 +10,7 @@ const highlights = [
     summary:
       'Multi-agent system for autonomous monitoring and operations at hydrogen refueling infrastructure. Built the AI operations assistant, Grafana dashboards, and CFD simulation integrations.',
     role: 'AI Product Manager, CSH2',
+    featured: true,
   },
   {
     label: 'Robotics Workflow Optimization',
@@ -43,12 +44,24 @@ export function WorkHighlights() {
         </h2>
       </ScrollAnimation>
 
-      <div className="mt-16 grid gap-6 md:grid-cols-2">
+      <div className="mt-16 grid gap-5 md:grid-cols-3">
         {highlights.map((item, i) => (
-          <ScrollAnimation key={item.slug} delay={i * 0.08}>
+          <ScrollAnimation key={item.slug} delay={i * 0.08} className={item.featured ? 'md:col-span-3' : ''}>
             <Link
               href={`/case-studies/${item.slug}`}
-              className="group block rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-bg-secondary)] p-6 transition-all duration-300 hover:border-[var(--color-border-default)] hover:bg-[var(--color-bg-tertiary)]"
+              className="group block h-full rounded-lg bg-[var(--color-bg-secondary)] p-6 transition-all duration-300 hover:bg-[var(--color-bg-tertiary)]"
+              style={{
+                boxShadow:
+                  '0 0 0 1px rgba(42, 39, 37, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  '0 0 0 1px rgba(200, 128, 74, 0.15), 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(200, 128, 74, 0.06)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  '0 0 0 1px rgba(42, 39, 37, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3)';
+              }}
             >
               <span className="text-xs font-medium uppercase tracking-widest text-[var(--color-accent-amber-dim)]">
                 {item.role}

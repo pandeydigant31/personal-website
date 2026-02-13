@@ -28,7 +28,7 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
-      className="text-xs text-[var(--color-text-tertiary)] transition-colors duration-150 hover:text-[var(--color-text-secondary)]"
+      className="rounded-full border border-[var(--color-border-subtle)] px-3 py-1 text-xs text-[var(--color-text-tertiary)] transition-all duration-200 hover:border-[var(--color-border-default)] hover:text-[var(--color-text-secondary)]"
     >
       {isLight ? 'Dark' : 'Light'}
     </button>

@@ -9,7 +9,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
   return (
     <Link
       href={`/case-studies/${study.slug}`}
-      className="group block border-b border-[var(--color-border-subtle)] py-7 first:pt-0 last:border-b-0"
+      className="group block border-b border-[var(--color-border-subtle)] py-7 pl-0 transition-all duration-300 first:pt-0 last:border-b-0 hover:pl-2"
     >
       <span className="text-xs font-medium uppercase tracking-widest text-[var(--color-accent-amber-dim)]">
         {study.role} &middot; {study.company}
@@ -18,7 +18,14 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
         {study.title}
       </h3>
       {study.takeaway && (
-        <p className="mt-3 border-l-2 border-[var(--color-accent-amber-dim)] pl-4 font-serif italic text-sm text-[var(--color-text-secondary)]">
+        <p
+          className="mt-3 pl-4 font-serif italic text-sm text-[var(--color-text-secondary)]"
+          style={{
+            borderLeftWidth: '2px',
+            borderLeftStyle: 'solid',
+            borderImage: 'linear-gradient(to bottom, var(--color-accent-amber), transparent) 1',
+          }}
+        >
           {study.takeaway}
         </p>
       )}

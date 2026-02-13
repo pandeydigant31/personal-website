@@ -27,6 +27,30 @@
   --font-serif: var(--font-source-serif), Georgia, 'Times New Roman', serif;
 }
 
+/* ─── Light mode overrides ─── */
+html.light {
+  --color-bg-primary: #f5f0ea;
+  --color-bg-secondary: #ebe5dc;
+  --color-bg-tertiary: #e0d9cf;
+  --color-bg-elevated: #d6cec3;
+
+  --color-accent-amber: #a86830;
+  --color-accent-amber-light: #8f5626;
+  --color-accent-amber-dim: #7a4a20;
+  --color-accent-gold: #8a7640;
+  --color-accent-teal: #357a6d;
+  --color-accent-teal-light: #2b6b5f;
+
+  --color-text-primary: #2a2520;
+  --color-text-secondary: #6b6358;
+  --color-text-tertiary: #9a9184;
+  --color-text-inverse: #f5f0ea;
+
+  --color-border-subtle: #d6cec3;
+  --color-border-default: #c4bbb0;
+  --color-border-emphasis: #a89e93;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -36,9 +60,47 @@
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
     font-family: var(--font-sans);
-    line-height: 1.7;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+  }
+
+  /* ─── Background atmosphere: warm radial glow ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(ellipse 80% 60% at 30% 20%, rgba(200, 128, 74, 0.04), transparent 70%),
+      radial-gradient(ellipse 60% 80% at 75% 80%, rgba(74, 140, 127, 0.02), transparent 60%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, transparent 50%, rgba(0, 0, 0, 0.15));
+    pointer-events: none;
+  }
+
+  html.light body::before {
+    background:
+      radial-gradient(ellipse 80% 60% at 30% 20%, rgba(200, 128, 74, 0.06), transparent 70%),
+      radial-gradient(ellipse 60% 80% at 75% 80%, rgba(74, 140, 127, 0.03), transparent 60%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, transparent 50%, rgba(0, 0, 0, 0.03));
+  }
+
+  /* ─── Grain texture overlay ─── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+
+  html.light body::after {
+    opacity: 0.025;
   }
 
   ::selection {
