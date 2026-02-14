@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Case Studies & Writing',
   description:
     'Detailed case studies on shipping AI in physical-world environments, plus essays on product thinking.',
+  alternates: {
+    canonical: '/case-studies',
+  },
 };
 
 export default function CaseStudiesPage() {

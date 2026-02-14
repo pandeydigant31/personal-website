@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     "The story behind the work. From the PM's Office of India to AI product management in San Francisco.",
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {

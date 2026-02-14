@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     title: 'Digant Pandey | AI Product Manager',
     description: 'I build AI products for the physical world.',
   },
+  alternates: {
+    canonical: '/',
+  },
   robots: {
     index: true,
     follow: true,
