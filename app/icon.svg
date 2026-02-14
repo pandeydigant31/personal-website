@@ -1,4 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <rect width="32" height="32" rx="6" fill="#0f0f0f"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#c8804a" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="400">D</text>
+  <!-- Dark background -->
+  <rect width="32" height="32" rx="6" fill="#0d1a2c"/>
+  <!-- Crimson triangle -->
+  <polygon points="16,4 28,26 4,26" fill="rgba(204,61,41,0.6)" />
+  <!-- Azure crescent -->
+  <ellipse cx="10" cy="14" rx="9" ry="10" fill="rgba(42,98,154,0.5)" />
+  <!-- Amber diamond -->
+  <polygon points="20,8 28,16 20,24 12,16" fill="rgba(218,135,42,0.45)" />
+  <!-- Teal shard -->
+  <polygon points="6,6 18,10 14,24" fill="rgba(72,142,104,0.4)" />
+  <!-- Plum accent -->
+  <circle cx="22" cy="22" r="6" fill="rgba(138,58,98,0.35)" />
 </svg>
